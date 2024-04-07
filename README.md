@@ -13,7 +13,7 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 * `export REFS=/path/to/your/references`
 * Add suggested aliases to your shell config (e.g. `.bashrc`), if desired
   
-# Features
+# Introduction
 Consider the following bare directory structure for storing references:
 ```
 references/
@@ -22,6 +22,9 @@ references/
 `-- collections   <---  Possibly create symlinks for thematic organisation of references (currently unimplemented)
 ```
 The central idea is that each reference has directory with a human-interpretable (and meaningful) name (the **reference identifier**) below `all`. The sub-directory `to_read` is where newly created references appear. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+
+# Currently Implemented Features
+miniref currently implements the following features:
 
 ## Adding a Reference
 ```
