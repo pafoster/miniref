@@ -73,4 +73,4 @@ The left-hand pane displays a tree of references, i.e. a directory tree. Given a
 
 # Roadmap
 * Collections
-* Full-text search / keyword extraction
+* PDF full-text search / keyword extraction
