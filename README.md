@@ -55,7 +55,7 @@ Use `refsearch.sh` (aliased as `rs`) to search and naviate based on [fzf](https:
 TODO Add screenshot
 
 The left-hand pane displays a tree of references. Given a selected reference, the right-hand pane displays:
-* **Bibliographic information** ('ref.ris')
+* **Bibliographic information** (`ref.ris`)
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
 
