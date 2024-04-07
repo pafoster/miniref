@@ -8,7 +8,7 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 * xpdf
 
 # Installation
-* Copy contents of `scripts/` to a location on your $PATH (e.g. `~/bin`. Define PATH=$PATH:$HOME/bin` if necessary)
+* Copy contents of `scripts/` to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
 * Install [fzf](https://github.com/junegunn/fzf)
 * `export REFS=/path/to/your/references`
 * Add suggested aliases to your shell config (e.g. `.bashrc`), if desired
