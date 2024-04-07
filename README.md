@@ -27,7 +27,7 @@ The central idea is that each reference has directory with a human-interpretable
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf $REFS/all/to_read/turing1936computable
 ```
-creates the directory `turing1936computable` at location `$REFS/all/to_read/` and populates the newly created directory with the specified PDF file (both HTTP(s) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing bibliographic information (e.g. author, title, publication year) in [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, our directory tree now looks like this:
+creates the directory `turing1936computable` at location `$REFS/all/to_read/` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing bibliographic information (e.g. author, title, publication year) in [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, our directory tree now looks like this:
 ```
 references/
 |-- all
