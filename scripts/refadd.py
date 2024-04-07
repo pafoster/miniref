@@ -30,10 +30,10 @@ workflows.
 DOI_SERVICE_URL = 'http://dx.doi.org/'
 
 TEMPLATE_RIS_ENTRY = """TY  - STD
-TI  - title
-AU  - author
-PY  - publication_year
-UR  - url
+TI  - 
+AU  - 
+PY  - 
+UR  - 
 ER  -
 """
 
