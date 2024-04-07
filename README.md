@@ -2,9 +2,9 @@
 miniref is an experiment at creating an **academic reference manager** (in the sense of [Zotero](https://www.zotero.org)), but for the **command line** and with a **minimalist flavour**. It is strongly inspired by projects like [Cobib](https://mrossinek.gitlab.io/programming/introducing-cobib/) and [fast-p](https://github.com/bellecp/fast-p) (the latter which appears to originate the idea of using `fzf` for searching PDF literature). 
 
 # Requirements
-* Python 3
-* [fzf](https://github.com/junegunn/fzf)
+* [fzf](https://github.com/junegunn/fzf) (available in many OS package managers) - for `refsearch.sh`
 * Standard Unix/Linux shell utilities (originally developed under OpenBSD 7.3 against `sh`; strict compatibility not guaranteed).
+* Python 3 - for `refadd.py`
 * xpdf
 
 # Installation
