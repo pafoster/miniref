@@ -43,7 +43,7 @@ Instead of relying solely on manual RIS data entry, it is alternatively possible
 ```
 refadd.py -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 $REFS/all/to_read/turing1936computable
 ```
-If we want to add a reference to the `to_read` directory (while saving a bit of typing), the shell alias `ra` achieves the same effect as follows:
+If we specificially want to add a reference to the `to_read` directory, the shell alias `ra` achieves the same effect as follows (while being less verbose):
 ```
 ra -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
