@@ -21,7 +21,7 @@ references/
 |   `-- to_read   <---  Add new references here, move references to parent once read
 `-- collections   <---  Possibly create symlinks for thematic organisation of references (currently unimplemented)
 ```
-The central idea is that each reference has a meaningfully named directory (the **reference identifier**) below `all` (with `to_read` being the reference's location upon creation). A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+The central idea is that each reference has a meaningfully named directory (the **reference identifier**) below `all` (with `to_read` being the reference's location upon creation). A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
 
 ## Adding a Reference
 ```
