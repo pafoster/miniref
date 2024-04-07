@@ -37,7 +37,7 @@ references/
 |           `-- ref.ris
 `-- collections
 ```
-In the previous command, the optional `-e` flag further opens `ref.ris` in $EDITOR, for manual entry of bibliographic information. 
+In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information. 
 
 Instead of relying solely on manual RIS data entry, it is alternatively possible to fetch RIS data automatically if we provide a DOI:
 ```
