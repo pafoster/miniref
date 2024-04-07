@@ -16,7 +16,7 @@ fi
 # For <F1> key binding split off summary information, then execute refview.sh once with all directories in selected tree as arguments.
 ( cd "$REFS" && find . -type d -exec ref_summarise.sh {} \; |
  	fzf --read0 --reverse \
-    --preview 'k=$(echo {} | /usr/bin/cut -f-1) && test -f "$k"/ref.ris && cat "$k"/ref.ris; echo "---"; find "$k" -maxdepth 1 -type f -exec basename \{\} \;; echo "---"; txt=$( find "$k" -maxdepth 1 -type f -iname "*.txt" | head -1 ) && test ! -z "$txt" && cat "$k"/*.txt' \
+    --preview 'k=$(echo {} | /usr/bin/cut -f-1) && test -f "$k"/ref.ris && cat "$k"/ref.ris; echo "---"; find "$k" -maxdepth 1 -type f -exec basename \{\} \;; echo "---"; find "$k" -maxdepth 1 -type f -iname "*.txt" -exec cat \{\} +' \
     --bind 'enter:become(k=$(echo {} | cut -f-1) && cd "$k" && $SHELL)' \
     --bind 'f1:execute(k=$(echo {} | cut -f-1) && find "$k" -type d -exec refview.sh \{\} +)'
 )
