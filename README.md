@@ -52,7 +52,7 @@ Side note: We can invoke `refadd.py` (or `ra`) multiple times on the same refere
 ## Navigating and Searching References
 Use `refsearch.sh` (aliased as `rs`) to search and naviate based on [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
-TODO Add screenshot
+![screenshot](screenshots/rs.png)
 
 The left-hand pane displays a tree of references. Given a selected reference, the right-hand pane displays:
 * **Bibliographic information** (`ref.ris`)
