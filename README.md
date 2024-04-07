@@ -21,7 +21,7 @@ references/
 |   `-- to_read   <---  Add new references here, move references to parent once read
 `-- collections   <---  Possibly create symlinks for thematic organisation of references (currently unimplemented)
 ```
-The central idea is that each reference has a (meaningfully named) directory below `all` (with `to_read` being the reference's location upon creation). A suggested directory naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*, for example we might use *turing1936computable* for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+The central idea is that each reference has a meaningfully named directory (the **reference identifier**) below `all` (with `to_read` being the reference's location upon creation). A suggested directory naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*, for example we might use *turing1936computable* for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
 
 ## Adding a Reference
 ```
@@ -47,7 +47,7 @@ If we want to add a reference to the `to_read` directory (while saving a bit of 
 ```
 ra -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
-Side note: We can invoke `refadd.py` (or `ra`) multiple times on the same reference identifier (for example, if we want to edit existing bibliographic information, or include additional files.)
+Side note: We can invoke `refadd.py` (or `ra`) multiple times on the same reference identifier `turing1936computable` (for example, if we want to edit existing bibliographic information, or include additional files.)
 
 ## Navigating and Searching References
 Use `refsearch.sh` (aliased as `rs`) to search and naviate based on [fzf](https://github.com/junegunn/fzf). You should see something like this:
