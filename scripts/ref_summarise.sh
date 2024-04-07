@@ -8,15 +8,19 @@
 RIS_FILENAME="ref.ris"
 MAX_CHARS=10000 # TODO Implement char limit
 
+clean_spaces() {
+    # Collapse successive [:space:] characters (includes tab, newline) into
+    # a single ' '
+    tr -s '[:space:]' ' '
+}
+
 if test ! -z "$1"; then
     ris="$1"/"$RIS_FILENAME"
-    # Use xargs to remove extraneous white-space and newlines
-    test -f "$ris" && ris_summary=$(cut -d'-' -f2- "$ris" | xargs)
+    test -f "$ris" && ris_summary=$(cut -d'-' -f2- "$ris" | clean_spaces)
 
-    # Find all ASCII files which are not $RIS_FILENAME
+    # Find all *.txt and .*.txt files
     # (don't descend into subdirectories)
-    other_files_sumary=$(find "$1" -maxdepth 1 -type f \! -name "$RIS_FILENAME" \
-        -exec grep -Iq . {} \; -print0 | xargs -0 cat | xargs)
+    other_files_sumary=$(find "$1" -maxdepth 1 -type f -iname "*.txt" -exec cat \{\} + | clean_spaces)
 
     # Join reference to summaries using a tab and terminate with NUL
     printf '%s\t%s %s\0' "$1" "$ris_summary" "$other_files_sumary"
