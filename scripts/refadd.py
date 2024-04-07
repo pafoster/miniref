@@ -14,9 +14,9 @@ DESCRIPTION = """
 refadd.py creates the directory DIR, if it does not already exist (any other directories in the path prefix of DIR
 must already exist). If SOURCE is specified, it is either copied to DIR or fetched remotely (depending on whether SOURCE
 is a local path or a URL). If DOI is specified, SOURCE is populated with citation data in RIS format, fetched remotely
-via HTTP and stored in the file ref.ris (overwriting any existing ref.ris file in the process). The -e flag causes
-ref.ris to be subsequently opened using $EDITOR (first populating SOURCE with a template ref.ris file if it did not
-already exist and no DOI was specified). Finally, refadd.py prints DIR to stdout.
+via HTTP and stored in the file ref.ris (overwriting any existing ref.ris file in the process). If DOI is not specified
+and ref.ris does not exist, a minimal ref.ris is created based on a template. The -e flag causes ref.ris to be
+subsequently opened using $EDITOR (first populating SOURCE with a template ref. Finally, refadd.py prints DIR to stdout.
 
 The recommended use of this utility is that DIR represents a single bibliographic reference via a meaningful directory
 name. For example, we might use einstein1905elektrodynamik as the directory name for Albert Einstein's 1905 paper
@@ -83,7 +83,7 @@ copy_to_target()
 def populate_metadata():
     file_path = Path(args.target, RIS_FILENAME)
     try:
-        if args.doi is None and args.edit and not file_path.is_file():
+        if args.doi is None and not file_path.is_file():
             with open(file_path, 'w') as f:
                 f.write(TEMPLATE_RIS_ENTRY)
         if args.doi is not None and args.doi.strip():
@@ -93,7 +93,7 @@ def populate_metadata():
             opener = urllib.request.build_opener()
             opener.addheaders = [('Accept', 'application/x-research-info-systems')]
             urllib.request.install_opener(opener)
-            urllib.request.urlretrieve(DOI_SERVICE_URL + args.doi, file_path)
+            urllib.request.urlretrieve(DOI_SERVICE_URL + args.doi.strip(), file_path)
 
         if args.edit:
             subprocess.call([EDITOR, file_path])
