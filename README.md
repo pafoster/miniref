@@ -64,9 +64,9 @@ The left-hand pane displays a tree of references, i.e. a directory tree. Given a
 * Contents of `ref.ris` for each reference
 * Contents of any `.txt` files (e.g. notes) for each reference
 
-Hitting Enter ↵ opens a shell at the selected directory.
+**Hitting Enter ↵ opens a shell** at the selected directory.
 
-Hitting F1 opens the first PDF (if available), given a selected reference. By contrast, selecting an ancestral directory with multiple references (each with a PDF) causes all such PDFs to be opened simultaneously (useful for reviewing literature).
+**Hitting F1 opens the first PDF** (if available), given a selected reference. By contrast, selecting an ancestral directory with multiple references (each with a PDF) causes all such PDFs to be opened simultaneously (useful for reviewing literature).
 
 # Roadmap
 * Collections
