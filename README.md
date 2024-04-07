@@ -59,7 +59,7 @@ The left-hand pane displays a tree of references, i.e. a directory tree. Given a
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
 
-Incremental search (i.e. by typing) is currently applied to:
+**Incremental search** (i.e. by typing) is currently applied to:
 * Reference identifiers (and reference paths)
 * Contents of `ref.ris` for each reference
 * Contents of any `.txt` files (e.g. notes) for each reference
