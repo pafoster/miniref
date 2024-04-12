@@ -34,11 +34,10 @@ miniref/
 ```
 In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information. 
 
-Instead of relying solely on manual RIS data entry, it is alternatively possible to fetch RIS data automatically, by providing a DOI:
+Instead of relying solely on manual RIS data entry, it is additionally possible to fetch RIS data automatically, by providing a DOI:
 ```
-refadd.py -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 turing1936computable
+refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
-**Note**: We can invoke `refadd.py` multiple times on the same reference identifier `turing1936computable` (for example, if we want to edit existing bibliographic information, or include additional files.)
 
 ## Navigating and Searching References
 Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
