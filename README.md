@@ -4,10 +4,10 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 **Note: This is an alpha stage project**.
 
 # Requirements
-* [fzf](https://github.com/junegunn/fzf) (available in many OS package managers) - for `refsearch.sh`
-* Standard Unix/Linux shell utilities (originally developed under OpenBSD 7.3 against `sh`; strict compatibility not guaranteed).
-* Python 3 - for `refadd.py`
+* [fzf](https://github.com/junegunn/fzf) (available via many OS package managers)
 * xpdf
+* Standard Unix/Linux shell utilities (originally developed under OpenBSD 7.3 against `sh`; strict compatibility not guaranteed).
+* Python 3 (no external package dependencies)
 
 # Installation
 * Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
@@ -16,12 +16,12 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 * Optional: Add [suggested aliases](aliases/aliases) to your shell config (e.g. `.bashrc`)
   
 # Introduction
-The central idea is that each reference is a directory with a human-interpretable and meaningful name that we will call the **reference identifier**. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+The basic idea is that each reference is a directory with a human-interpretable and meaningful name that we will call the **reference identifier**. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
 
 # Currently Implemented Features
 miniref currently implements the following features:
 
-## Adding and Amending a Reference
+## Adding/Amending a Reference
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
@@ -32,9 +32,9 @@ miniref/
     |-- Turing_Paper_1936.pdf
     `-- ref.ris
 ```
-In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information. 
+(In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information.) 
 
-Instead of relying solely on manual RIS data entry, it is additionally possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
+Instead of relying solely on manual RIS data entry, it is also possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
 ```
 refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
@@ -44,7 +44,7 @@ Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You s
 
 ![screenshot](screenshots/rs.png)
 
-The left-hand pane displays a list of references. Given a selected reference, the right-hand pane displays:
+The left-hand pane displays a list of references. For the selected reference, the right-hand pane displays:
 * **Bibliographic information** (`ref.ris`)
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
@@ -54,9 +54,9 @@ The left-hand pane displays a list of references. Given a selected reference, th
 * Contents of `ref.ris`
 * Contents of any `.txt` files (e.g. notes)
 
-**Hitting Enter ↵ opens a shell** at the selected reference.
+**Hitting Enter ↵ changes to the directory** of the selected reference.
 
-**Hitting F1 opens the first PDF** (if available), given the selected reference.
+**Hitting F1 opens the first PDF** (if available) of the selected reference.
 
 # Roadmap
 * Tagging
