@@ -10,10 +10,10 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 * xpdf
 
 # Installation
-* Copy contents of [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
+* Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
 * Install [fzf](https://github.com/junegunn/fzf)
 * Optional: `export MINIREF_HOME=/path/to/references` (defaults to $HOME/miniref)
-* Optional: Add [suggested aliases](aliases) to your shell config (e.g. `.bashrc`)
+* Optional: Add [suggested aliases](aliases/aliases) to your shell config (e.g. `.bashrc`)
   
 # Introduction
 Consider the following bare directory structure for storing references:
