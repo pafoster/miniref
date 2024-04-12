@@ -16,8 +16,7 @@ to $HOME/miniref). If SOURCE is specified, it is either copied to DIR or fetched
 is a local path or a URL). If DOI is specified, SOURCE is populated with citation data in RIS format, fetched remotely
 via HTTP and stored in the file ref.ris (overwriting any existing ref.ris file in the process). If DOI is not specified
 and ref.ris does not exist, a minimal ref.ris is created based on a template. The -e flag causes ref.ris to be
-subsequently opened using $EDITOR (first populating SOURCE with a template ref. Finally, refadd.py prints the full path
-to DIR to stdout.
+subsequently opened using $EDITOR. Finally, refadd.py prints the full path of DIR to stdout.
 """
 
 MINIREF_HOME = os.environ.get('MINIREF_HOME', os.environ['HOME'] + '/miniref')
