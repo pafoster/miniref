@@ -39,7 +39,7 @@ Instead of relying solely on manual RIS data entry, it is additionally possible 
 refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
 
-## Navigating and Searching References
+## Searching References
 Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
 ![screenshot](screenshots/rs.png)
