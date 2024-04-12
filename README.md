@@ -44,7 +44,7 @@ Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You s
 
 ![screenshot](screenshots/rs.png)
 
-The left-hand pane displays a list of references. Given a selected reference, the right-hand pane displays:
+The left-hand pane displays a list of references. For the selected reference, the right-hand pane displays:
 * **Bibliographic information** (`ref.ris`)
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
@@ -56,7 +56,7 @@ The left-hand pane displays a list of references. Given a selected reference, th
 
 **Hitting Enter ↵ opens a shell** at the selected reference.
 
-**Hitting F1 opens the first PDF** (if available), given the selected reference.
+**Hitting F1 opens the first PDF** (if available) for the selected reference.
 
 # Roadmap
 * Tagging
