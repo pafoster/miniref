@@ -1,5 +1,6 @@
 # Aliases/functions for bibliography management
 function ra { # Add reference to "to_read" and change to resulting directory
+    # TODO Use reftar.py to tag the reference
     target_parent="$REFS"/all/to_read
     target=$(cd "$target_parent" && refadd.py "$@")
     test ! -z "$target" && cd "$target_parent"/"$target" || exit 1
