@@ -23,32 +23,25 @@ miniref currently implements the following features:
 
 ## Adding a Reference
 ```
-refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf $REFS/all/to_read/turing1936computable
+refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
 creates the directory `turing1936computable` at location `$MINIREF_HOME` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing bibliographic information (e.g. author, title, publication year) in [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, `$MINIREF_HOME` now looks like this:
 ```
-references/
-|-- all
-|   `-- to_read
-|       `-- turing1936computable
-|           |-- Turing_Paper_1936.pdf
-|           `-- ref.ris
-`-- collections
+miniref/
+`-- turing1936computable
+    |-- Turing_Paper_1936.pdf
+    `-- ref.ris
 ```
 In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information. 
 
-Instead of relying solely on manual RIS data entry, it is alternatively possible to fetch RIS data automatically if we provide a DOI:
+Instead of relying solely on manual RIS data entry, it is alternatively possible to fetch RIS data automatically, by providing a DOI:
 ```
-refadd.py -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 $REFS/all/to_read/turing1936computable
+refadd.py -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
-If we specificially want to add a reference to the `to_read` directory, the shell alias `ra` achieves the same effect as follows (while being less verbose):
-```
-ra -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/plms/s2-42.1.230 turing1936computable
-```
-Side note: We can invoke `refadd.py` (or `ra`) multiple times on the same reference identifier `turing1936computable` (for example, if we want to edit existing bibliographic information, or include additional files.)
+**Note**: We can invoke `refadd.py` multiple times on the same reference identifier `turing1936computable` (for example, if we want to edit existing bibliographic information, or include additional files.)
 
 ## Navigating and Searching References
-Use `refsearch.sh` (aliased as `rs`) to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
+Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
 ![screenshot](screenshots/rs.png)
 
