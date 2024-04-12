@@ -12,7 +12,7 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 # Installation
 * Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
 * Install [fzf](https://github.com/junegunn/fzf)
-* Optional: `export MINIREF_HOME=/path/to/my/references` (defaults to $HOME/miniref)
+* Optional: `export MINIREF_HOME=/path/to/my/references` (defaults to `$HOME/miniref`)
 * Optional: Add [suggested aliases](aliases/aliases) to your shell config (e.g. `.bashrc`)
   
 # Introduction
