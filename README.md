@@ -54,9 +54,9 @@ The left-hand pane displays a list of references. For the selected reference, th
 * Contents of `ref.ris`
 * Contents of any `.txt` files (e.g. notes)
 
-**Hitting Enter ↵ opens a shell** at the selected reference.
+**Hitting Enter ↵ changes to the directory** of the selected reference.
 
-**Hitting F1 opens the first PDF** (if available) for the selected reference.
+**Hitting F1 opens the first PDF** (if available) of the selected reference.
 
 # Roadmap
 * Tagging
