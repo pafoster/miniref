@@ -51,8 +51,8 @@ The left-hand pane displays a list of references. Given a selected reference, th
 
 **Incremental search** (i.e. by typing) is currently applied to:
 * Reference identifiers
-* Contents of `ref.ris` for each reference
-* Contents of any `.txt` files (e.g. notes) for each reference
+* Contents of `ref.ris`
+* Contents of any `.txt` files (e.g. notes)
 
 **Hitting Enter ↵ opens a shell** at the selected reference.
 
