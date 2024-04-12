@@ -12,18 +12,11 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 # Installation
 * Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
 * Install [fzf](https://github.com/junegunn/fzf)
-* Optional: `export MINIREF_HOME=/path/to/references` (defaults to $HOME/miniref)
+* Optional: `export MINIREF_HOME=/path/to/my/references` (defaults to $HOME/miniref)
 * Optional: Add [suggested aliases](aliases/aliases) to your shell config (e.g. `.bashrc`)
   
 # Introduction
-Consider the following bare directory structure for storing references:
-```
-references/
-|-- all
-|   `-- to_read   <---  Add new references here, move references to parent once read
-`-- collections   <---  Possibly create symlinks for thematic organisation of references (currently unimplemented)
-```
-The central idea is that each reference is a directory below `all`, with a human-interpretable and meaningful name that we will call the **reference identifier**. The sub-directory `to_read` is where newly created references appear. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+The central idea is that each reference is a directory with a human-interpretable and meaningful name that we will call the **reference identifier**. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
 
 # Currently Implemented Features
 miniref currently implements the following features:
@@ -32,7 +25,7 @@ miniref currently implements the following features:
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf $REFS/all/to_read/turing1936computable
 ```
-creates the directory `turing1936computable` at location `$REFS/all/to_read/` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing bibliographic information (e.g. author, title, publication year) in [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, our directory tree now looks like this:
+creates the directory `turing1936computable` at location `$MINIREF_HOME` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing bibliographic information (e.g. author, title, publication year) in [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, `$MINIREF_HOME` now looks like this:
 ```
 references/
 |-- all
@@ -55,11 +48,11 @@ ra -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf -i doi:10.1112/p
 Side note: We can invoke `refadd.py` (or `ra`) multiple times on the same reference identifier `turing1936computable` (for example, if we want to edit existing bibliographic information, or include additional files.)
 
 ## Navigating and Searching References
-Use `refsearch.sh` (aliased as `rs`) to search and naviate based on [fzf](https://github.com/junegunn/fzf). You should see something like this:
+Use `refsearch.sh` (aliased as `rs`) to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
 ![screenshot](screenshots/rs.png)
 
-The left-hand pane displays a tree of references, i.e. a directory tree. Given a selected reference, the right-hand pane displays:
+The left-hand pane displays a list of references. Given a selected reference, the right-hand pane displays:
 * **Bibliographic information** (`ref.ris`)
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
@@ -69,10 +62,10 @@ The left-hand pane displays a tree of references, i.e. a directory tree. Given a
 * Contents of `ref.ris` for each reference
 * Contents of any `.txt` files (e.g. notes) for each reference
 
-**Hitting Enter ↵ opens a shell** at the selected directory.
+**Hitting Enter ↵ opens a shell** at the selected reference.
 
-**Hitting F1 opens the first PDF** (if available), given a selected reference. By contrast, selecting an ancestral directory with multiple references (each with a PDF) causes all such PDFs to be opened simultaneously (useful for reviewing literature).
+**Hitting F1 opens the first PDF** (if available), given the selected reference.
 
 # Roadmap
-* Collections
+* Tagging
 * PDF full-text search / keyword extraction
