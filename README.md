@@ -1,10 +1,12 @@
 # miniref: Minimalist Reference Management Using the Command Line
-miniref is an experiment at creating an **academic reference manager** (in the sense of [Zotero](https://www.zotero.org)), but for the **command line** and with a **minimalist flavour**. It is strongly inspired by projects like [Cobib](https://mrossinek.gitlab.io/programming/introducing-cobib/) and [fast-p](https://github.com/bellecp/fast-p) (the latter which appears to originate the idea of using `fzf` for searching PDF literature). 
+miniref is an experiment at creating an **academic reference manager** (in the sense of [Zotero](https://www.zotero.org)), but for the **command line** and with a **minimalist flavour**. It is strongly inspired by projects like [Cobib](https://mrossinek.gitlab.io/programming/introducing-cobib/) and [fast-p](https://github.com/bellecp/fast-p) (the latter which appears to originate the idea of using `fzf` for searching PDF literature).
+
+**Note: This is an alpha stage project**.
 
 # Requirements
-* Python 3
-* [fzf](https://github.com/junegunn/fzf)
+* [fzf](https://github.com/junegunn/fzf) (available in many OS package managers) - for `refsearch.sh`
 * Standard Unix/Linux shell utilities (originally developed under OpenBSD 7.3 against `sh`; strict compatibility not guaranteed).
+* Python 3 - for `refadd.py`
 * xpdf
 
 # Installation
@@ -13,7 +15,7 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 * `export REFS=/path/to/your/references`
 * Add suggested aliases to your shell config (e.g. `.bashrc`), if desired
   
-# Features
+# Introduction
 Consider the following bare directory structure for storing references:
 ```
 references/
@@ -21,7 +23,10 @@ references/
 |   `-- to_read   <---  Add new references here, move references to parent once read
 `-- collections   <---  Possibly create symlinks for thematic organisation of references (currently unimplemented)
 ```
-The central idea is that each reference has directory with a human-interpretable (and meaningful) name (the **reference identifier**) below `all`. The sub-directory `to_read` is where newly created references appear. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+The central idea is that each reference is a directory below `all`, with a human-interpretable and meaningful name that we will call the **reference identifier**. The sub-directory `to_read` is where newly created references appear. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
+
+# Currently Implemented Features
+miniref currently implements the following features:
 
 ## Adding a Reference
 ```
@@ -54,20 +59,20 @@ Use `refsearch.sh` (aliased as `rs`) to search and naviate based on [fzf](https:
 
 ![screenshot](screenshots/rs.png)
 
-The left-hand pane displays a tree of references. Given a selected reference, the right-hand pane displays:
+The left-hand pane displays a tree of references, i.e. a directory tree. Given a selected reference, the right-hand pane displays:
 * **Bibliographic information** (`ref.ris`)
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
 
-Incremental search (i.e. by typing) is currently applied to:
+**Incremental search** (i.e. by typing) is currently applied to:
 * Reference identifiers (and reference paths)
 * Contents of `ref.ris` for each reference
 * Contents of any `.txt` files (e.g. notes) for each reference
 
-Hitting Enter ↵ opens a shell at the selected directory.
+**Hitting Enter ↵ opens a shell** at the selected directory.
 
-Hitting F1 opens the first PDF (if available), given a selected reference. By contrast, selecting an ancestral directory with multiple references (each with a PDF) causes all such PDFs to be opened simultaneously (useful for reviewing literature).
+**Hitting F1 opens the first PDF** (if available), given a selected reference. By contrast, selecting an ancestral directory with multiple references (each with a PDF) causes all such PDFs to be opened simultaneously (useful for reviewing literature).
 
 # Roadmap
 * Collections
-* Full-text search / keyword extraction
+* PDF full-text search / keyword extraction
