@@ -50,7 +50,7 @@ The left-hand pane displays a list of references. Given a selected reference, th
 * **Notes** (`cat` of `.txt` files)
 
 **Incremental search** (i.e. by typing) is currently applied to:
-* Reference identifiers (and reference paths)
+* Reference identifiers
 * Contents of `ref.ris` for each reference
 * Contents of any `.txt` files (e.g. notes) for each reference
 
