@@ -21,7 +21,7 @@ The central idea is that each reference is a directory with a human-interpretabl
 # Currently Implemented Features
 miniref currently implements the following features:
 
-## Adding a Reference
+## Adding and Amending a Reference
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
@@ -34,7 +34,7 @@ miniref/
 ```
 In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information. 
 
-Instead of relying solely on manual RIS data entry, it is additionally possible to fetch RIS data automatically, by providing a DOI:
+Instead of relying solely on manual RIS data entry, it is additionally possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
 ```
 refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
