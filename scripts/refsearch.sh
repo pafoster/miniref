@@ -15,6 +15,6 @@ MINIREF_HOME=${MINIREF_HOME:-${HOME}/miniref}
  	fzf --read0 --reverse \
     --preview 'k=$(echo {} | /usr/bin/cut -f-1) && test -f "$k"/ref.ris && cat "$k"/ref.ris; echo "---"; find "$k" -maxdepth 1 -type f -exec basename \{\} \;; echo "---"; find "$k" -maxdepth 1 -type f -iname "*.txt" -exec cat \{\} +' \
     --bind 'enter:become(k=$(echo {} | cut -f-1) && cd "$k" && $SHELL)' \
-    --bind 'f1:execute(k=$(echo {} | cut -f-1) && find "$k" -type d -exec refview.sh \{\} +)' \
+    --bind 'f1:execute(k=$(echo {} | cut -f-1) && refview.sh "$k")' \
     --preview-window='wrap'
 )
