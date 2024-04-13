@@ -11,13 +11,13 @@ import urllib.parse
 import urllib.request
 
 DESCRIPTION = """
-refadd.py checks if DIR is an existing subdirectory of $MINIREF_HOME. If not, it creates the directory `basename DIR`
-at $MINIREF_HOME ($MINIREF_HOME defaults to $HOME/miniref). If SOURCE is specified, it is either copied to this
-existing/newly created target directory or fetched remotely (depending on whether SOURCE is a local path or a URL). If
-DOI is specified, the target directory is populated with citation data in RIS format, fetched remotely via HTTP and
-stored in the file ref.ris (overwriting any existing ref.ris file in the process). If DOI is not specified and ref.ris
-does not exist, a minimal ref.ris is created based on a template. The -e flag causes ref.ris to be subsequently opened
-using $EDITOR. refadd.py prints the full path of the target directory to stdout.
+refadd.py checks if basename(abspath(DIR)) is an existing subdirectory of $MINIREF_HOME. If not, it creates the
+directory at $MINIREF_HOME ($MINIREF_HOME defaults to $HOME/miniref). If SOURCE is specified, it is either copied
+to this existing/newly created target directory or fetched remotely (depending on whether SOURCE is a local path or a
+URL). If DOI is specified, the target directory is populated with citation data in RIS format, fetched remotely via HTTP
+and stored in the file ref.ris (overwriting any existing ref.ris file in the process). If DOI is not specified and
+ref.ris does not exist, a minimal ref.ris is created based on a template. The -e flag causes ref.ris to be subsequently
+opened using $EDITOR. refadd.py prints the full path of the target directory to stdout.
 """
 
 MINIREF_HOME = os.environ.get('MINIREF_HOME', os.environ['HOME'] + '/miniref')
@@ -44,7 +44,7 @@ parser.add_argument('target', metavar='DIR', type=str, help='target directory (e
 args = parser.parse_args()
 
 def create_target():
-    target = Path(MINIREF_HOME, os.path.basename(args.target))
+    target = Path(MINIREF_HOME, os.path.basename(os.path.abspath(args.target)))
     try:
         os.makedirs(target, exist_ok=True)
         print(target)
