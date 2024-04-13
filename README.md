@@ -38,6 +38,11 @@ Instead of relying solely on manual RIS data entry, it is also possible to fetch
 ```
 refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
+We can also use `refadd.py` like this, to the same effect:
+```
+cd $MINIREF_HOME/turing1936computable
+refadd.py -i doi:10.1112/plms/s2-42.1.230 .
+```
 
 ## Searching References
 Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
