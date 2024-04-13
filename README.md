@@ -44,7 +44,7 @@ cd $MINIREF_HOME/turing1936computable
 refadd.py -i doi:10.1112/plms/s2-42.1.230 .
 ```
 
-## Searching References
+## Searching and Viewing References
 Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
 ![screenshot](screenshots/rs.png)
