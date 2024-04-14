@@ -21,7 +21,7 @@ The basic idea is that each reference is a directory with a human-interpretable 
 # Currently Implemented Features
 miniref currently implements the following features:
 
-## Adding and Amending a Reference
+## Managing References
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
