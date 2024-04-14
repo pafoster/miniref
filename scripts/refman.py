@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 
 DESCRIPTION = """
-refadd.py checks if basename(abspath(REF_DIR)) is an existing subdirectory of $MINIREF_HOME. If not, it creates the
+refman.py checks if basename(abspath(REF_DIR)) is an existing subdirectory of $MINIREF_HOME. If not, it creates the
 directory at $MINIREF_HOME ($MINIREF_HOME defaults to $HOME/miniref). If SOURCE is specified, it is either copied
 to this existing/newly created target directory or fetched remotely (depending on whether SOURCE is a local path or a
 URL). If DOI is specified, the target directory is populated with citation data in RIS format, fetched remotely via HTTP
@@ -20,7 +20,7 @@ ref.ris does not exist, a minimal ref.ris is created based on a template. The -e
 opened using $EDITOR. If NEW_TAG is specified, the file tags.txt is created (or updated) to include NEW_TAG. If
 EXISTING_TAG is specified, the specified tag is removed from tags.txt.
 
-refadd.py prints the full path of the target directory to stdout.
+refman.py prints the full path of the target directory to stdout.
 """
 
 MINIREF_HOME = os.environ.get('MINIREF_HOME', os.environ['HOME'] + '/miniref')

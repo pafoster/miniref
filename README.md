@@ -23,7 +23,7 @@ miniref currently implements the following features:
 
 ## Managing References
 ```
-refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
+refman.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
 creates the directory `turing1936computable` at location `$MINIREF_HOME` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing citation information (e.g. author, title, publication year) in [RIS (RefMan)](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, `$MINIREF_HOME` now looks like this:
 ```
@@ -37,12 +37,12 @@ In the previous command, the optional `-e` flag opens `ref.ris` in `$EDITOR`, fo
 
 Instead of relying on manual RIS data entry, it is alternatively possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
 ```
-refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
+refman.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
-We can also use `refadd.py` like this, to the same effect:
+We can also use `refman.py` like this, to the same effect:
 ```
 cd $MINIREF_HOME/turing1936computable
-refadd.py -i doi:10.1112/plms/s2-42.1.230 .
+refman.py -i doi:10.1112/plms/s2-42.1.230 .
 ```
 
 ## Searching and Viewing References
@@ -65,5 +65,4 @@ The left-hand pane displays a list of references. For the selected reference, th
 **Hitting F1 opens the first PDF** (if available) of the selected reference.
 
 # Roadmap
-* Tagging
 * PDF full-text search / keyword extraction
