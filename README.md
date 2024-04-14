@@ -21,7 +21,7 @@ The basic idea is that each reference is a directory with a human-interpretable 
 # Currently Implemented Features
 miniref currently implements the following features:
 
-## Adding/Amending a Reference
+## Adding and Amending a Reference
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
@@ -45,7 +45,7 @@ cd $MINIREF_HOME/turing1936computable
 refadd.py -i doi:10.1112/plms/s2-42.1.230 .
 ```
 
-## Searching References
+## Searching and Viewing References
 Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
 ![screenshot](screenshots/rs.png)
