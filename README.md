@@ -33,7 +33,7 @@ miniref/
     `-- ref.ris
 ```
 
-In the previous command, the optional `-e` flag opens `ref.ris` in `$EDITOR`, for manual entry of citation information. Note that in Google Scholar, it is possible to get RIS-formatted citation information by selecting 'Cite' → 'RefMan' for a search result. If you set your browser to open files of this type in place, it is possible to copy and paste the citation information in combination with the `-e` flag.
+In the previous command, the optional `-e` flag opens `ref.ris` in `$EDITOR`, for manual entry of citation information. Note that in Google Scholar, you can get RIS-formatted citation information by selecting 'Cite' → 'RefMan' for a search result. If you set your browser to open files of this type in-place, you can copy and paste the citation information in combination with the `-e` flag.
 
 Instead of relying on manual RIS data entry, it is alternatively possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
 ```
