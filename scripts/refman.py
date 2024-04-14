@@ -33,7 +33,7 @@ UR  -
 ER  -
 """
 RIS_FILENAME = 'ref.ris'
-TAG_FILENAME = 'tags.txt'
+TAG_FILENAME = 'tags'
 EDITOR = os.environ.get('EDITOR', 'vim')
 
 parser = argparse.ArgumentParser(description=DESCRIPTION)

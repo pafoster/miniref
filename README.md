@@ -39,7 +39,7 @@ Instead of relying on manual RIS data entry, it is alternatively possible to fet
 ```
 refman.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
-We can also use `refman.py` like this, to the same effect:
+We can also use `refman.py` as follows, to the same effect:
 ```
 cd $MINIREF_HOME/turing1936computable
 refman.py -i doi:10.1112/plms/s2-42.1.230 .
@@ -57,7 +57,8 @@ The left-hand pane displays a list of references. For the selected reference, th
 
 **Incremental search** (i.e. by typing) is currently applied to:
 * Reference identifiers
-* Contents of `ref.ris`
+* Contents of `ref.ris` file
+* Contents of `tags` file
 * Contents of any `.txt` files (e.g. notes)
 
 **Hitting Enter ↵ changes to the directory** of the selected reference.
