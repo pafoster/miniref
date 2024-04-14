@@ -25,16 +25,17 @@ miniref currently implements the following features:
 ```
 refadd.py -e -s https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf turing1936computable
 ```
-creates the directory `turing1936computable` at location `$MINIREF_HOME` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing bibliographic information (e.g. author, title, publication year) in [RIS](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, `$MINIREF_HOME` now looks like this:
+creates the directory `turing1936computable` at location `$MINIREF_HOME` and populates the newly created directory with the specified PDF file (both HTTP(S) URLs and local paths are supported). In addition, the newly created directory is populated with a minimal `ref.ris` file, for storing citation information (e.g. author, title, publication year) in [RIS (RefMan)](https://en.wikipedia.org/wiki/RIS_(file_format)) format. Thus, `$MINIREF_HOME` now looks like this:
 ```
 miniref/
 `-- turing1936computable
     |-- Turing_Paper_1936.pdf
     `-- ref.ris
 ```
-(In the previous command, the optional `-e` flag further opens `ref.ris` in `$EDITOR`, for manual entry of bibliographic information.) 
 
-Instead of relying solely on manual RIS data entry, it is also possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
+In the previous command, the optional `-e` flag opens `ref.ris` in `$EDITOR`, for manual entry of citation information. Note that in Google Scholar, it is possible to get RIS-formatted citation information by selecting 'Cite' → 'RefMan' for a search result. If you set your browser to open files of this type in place, it is possible to copy and paste the citation information in combination with the `-e` flag.
+
+Instead of relying on manual RIS data entry, it is alternatively possible to fetch RIS data automatically, by providing a DOI. We can amend our existing reference as follows:
 ```
 refadd.py -i doi:10.1112/plms/s2-42.1.230 turing1936computable
 ```
@@ -50,7 +51,7 @@ Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You s
 ![screenshot](screenshots/rs.png)
 
 The left-hand pane displays a list of references. For the selected reference, the right-hand pane displays:
-* **Bibliographic information** (`ref.ris`)
+* **Citation information** (`ref.ris`)
 * **List of files** (e.g. `.txt` files, PDFs)
 * **Notes** (`cat` of `.txt` files)
 
