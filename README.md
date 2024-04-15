@@ -67,7 +67,7 @@ Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You s
 
 ![screenshot](screenshots/rs.png)
 
-The left-hand pane displays a list of references. For the selected reference, the right-hand pane displays:
+The upper pane displays a list of references. For the selected reference, the lower pane displays:
 * **Citation information** (`ref.ris`)
 * **Tags** (`tags`)
 * **Notes** (`cat` of `.txt` files)
