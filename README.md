@@ -57,7 +57,7 @@ miniref/
     |-- ref.ris
     `-- tags
 ```
-We can untag a reference (i.e. remove a tag) as follows:
+We can untag a reference (i.e. remove a specified tag) as follows:
 ```
 refman.py -u @to_read turing1936computable
 ```
