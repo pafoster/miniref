@@ -1,18 +1,15 @@
-# Aliases/functions for bibliography management
-function ra { # Add reference to "to_read" and change to resulting directory
-    # TODO Use reftar.py to tag the reference
-    target_parent="$REFS"/all/to_read
-    target=$(cd "$target_parent" && refadd.py "$@")
-    test ! -z "$target" && cd "$target_parent"/"$target" || exit 1
+# Aliases/functions for refrence management
+function ra {
+    # Label reference "to_read", edit citation information and change to
+    # resulting directory
+    d=$(refman.py -e -t @to_read "$@") && cd "$d" || return
 }
-function rv { # Display first PDF for each reference supplied
-    refview.sh "$@"
+alias rv='refview.sh'
+function rn {
+    # Edit a reference's notes using $EDITOR
+    ( test ! -z "$1" && cd "$1" && $EDITOR notes.txt || return )
 }
-function rn { # Edit a reference's notes using $EDITOR
-    ( test ! -z "$1" && cd "$1" || exit
-      $EDITOR notes.txt
-    )
-}
-function rs { # Search references using fzf
-    refsearch.sh "$@"
+function rs {
+    # Search references using fzf and change to selected directory
+    d=$(refsearch.sh "$@") && cd "$d" || return
 }
