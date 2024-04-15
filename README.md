@@ -6,12 +6,12 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 # Requirements
 * [fzf](https://github.com/junegunn/fzf) (available via many OS package managers)
 * xpdf
-* Standard Unix/Linux shell utilities (originally developed under OpenBSD 7.3 against `sh`; strict compatibility not guaranteed).
+* Standard Unix/Linux shell utilities (originally developed under OpenBSD 7.3 against `sh`; POSIX compliance not guaranteed).
 * Python 3 (no external package dependencies)
 
 # Installation
 * Install [fzf](https://github.com/junegunn/fzf)
-* Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
+* Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`; redefine `PATH=$PATH:$HOME/bin` in your `.profile` if necessary)
 * Optional: `export MINIREF_HOME=/path/to/my/references` in your `.profile` (defaults to `$HOME/miniref`)
 * Optional: Add [suggested aliases and functions](aliases/aliases) to your shell config (e.g. `.bashrc`)
   
