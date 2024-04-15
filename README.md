@@ -69,7 +69,7 @@ Use [rs](aliases/aliases) (function defined on `refsearch.sh`) to search using [
 
 The left-hand pane displays a list of references. For the selected reference, the right-hand pane displays:
 * **Citation information** (`ref.ris`)
-* **List of files** (e.g. `.txt` files, PDFs)
+* **Tags** (`tags`)
 * **Notes** (`cat` of `.txt` files)
 
 **Incremental search** (i.e. by typing) is currently applied to:
