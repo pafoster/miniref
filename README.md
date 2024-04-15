@@ -49,7 +49,7 @@ refman.py -i doi:10.1112/plms/s2-42.1.230 .
 ```
 refman.py -t @to_read -t @computabilty_theory turing1936computable
 ```
-assigns the tags `@to_read` `@computability_theory` to our reference, using the file `tags` to store tags. Thus, `$MINIREF_HOME` now looks like this:
+assigns the tags `@to_read` and `@computability_theory` to our reference, using the file `tags` to store tags. Thus, `$MINIREF_HOME` now looks like this:
 ```
 miniref/
 `-- turing1936computable
@@ -57,7 +57,7 @@ miniref/
     |-- ref.ris
     `-- tags
 ```
-We can untag a reference as follows:
+We can untag a reference (i.e. remove a tag) as follows:
 ```
 refman.py -u @to_read turing1936computable
 ```
