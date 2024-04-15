@@ -45,6 +45,23 @@ cd $MINIREF_HOME/turing1936computable
 refman.py -i doi:10.1112/plms/s2-42.1.230 .
 ```
 
+### Tagging a Reference
+```
+refman.py -t @to_read -t @computabilty_theory turing1936computable
+```
+assigns the tags `@to_read` `@computability_theory` to our reference, using the file `tags` to store tags. Thus, `$MINIREF_HOME` now looks like this:
+```
+miniref/
+`-- turing1936computable
+    |-- Turing_Paper_1936.pdf
+    |-- ref.ris
+    `-- tags
+```
+We can untag a reference as follows:
+```
+refman.py -u @to_read turing1936computable
+```
+
 ## Searching and Viewing References
 Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
