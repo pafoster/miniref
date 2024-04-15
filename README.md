@@ -12,8 +12,8 @@ miniref is an experiment at creating an **academic reference manager** (in the s
 # Installation
 * Install [fzf](https://github.com/junegunn/fzf)
 * Copy [scripts](scripts) to a location on your `$PATH` (e.g. `~/bin`. Redefine `PATH=$PATH:$HOME/bin` if necessary)
-* Add [suggested aliases and functions](aliases/aliases) to your shell config (e.g. `.bashrc`)
 * Optional: `export MINIREF_HOME=/path/to/my/references` in your `.profile` (defaults to `$HOME/miniref`)
+* Optional: Add [suggested aliases and functions](aliases/aliases) to your shell config (e.g. `.bashrc`)
   
 # Introduction
 The basic idea is that each reference is a directory with a human-interpretable and meaningful name that we will call the **reference identifier**. A suggested naming scheme is *firstAuthorSurname* + *publicationYear* + *firstTitleKeyWord*. For example, we might use *turing1936computable* as the reference identifier for A.M. Turing's 1936 paper *"On Computable Numbers, with an Application to the Entscheidungsproblem"*.
@@ -63,7 +63,7 @@ refman.py -u @to_read turing1936computable
 ```
 
 ## Searching and Viewing References
-Use [rs](aliases/aliases) (function defined on `refsearch.sh`) to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
+Use `refsearch.sh` to search using [fzf](https://github.com/junegunn/fzf). You should see something like this:
 
 ![screenshot](screenshots/rs.png)
 
@@ -78,7 +78,7 @@ The left-hand pane displays a list of references. For the selected reference, th
 * Contents of `tags` file
 * Contents of any `.txt` files (e.g. notes)
 
-**Hitting Enter ↵ changes to the directory** of the selected reference.
+**Hitting Enter ↵ executes a shell** in the directory of the selected reference.
 
 **Hitting F1 opens the first PDF** (if available) of the selected reference.
 
