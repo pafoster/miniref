@@ -83,4 +83,5 @@ The left-hand pane displays a list of references. For the selected reference, th
 **Hitting F1 opens the first PDF** (if available) of the selected reference.
 
 # Roadmap
+* Use --listen to request refresh-preview() and reload() on file change using inotify
 * PDF full-text search / keyword extraction
