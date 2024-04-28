@@ -80,8 +80,10 @@ The upper pane displays a list of references. For the selected reference, the lo
 
 **Hitting Enter ↵ executes a shell** in the directory of the selected reference.
 
-**Hitting F1 opens the first PDF** (if available) of the selected reference.
+**Hitting CTRL-O opens the first PDF** (if available) of the selected reference.
+
+**Hitting CTRL-R forces a reload** of the upper and lower pane contents.
 
 # Roadmap
-* Use --listen to request refresh-preview() and reload() on file change using inotify
+* Use --listen to automatically perform reload() on file change using inotify
 * PDF full-text search / keyword extraction
