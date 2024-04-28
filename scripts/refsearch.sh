@@ -6,11 +6,12 @@
 MINIREF_HOME=${MINIREF_HOME:-${HOME}/miniref}
 
 # TODO refactor, so that ref_summarise performs the `find . type d`
-cd "$MINIREF_HOME" && find . -type d -exec ref_summarise.sh {} \; |
- 	fzf --read0 --reverse --exact --no-hscroll \
+summarise_all="find . -type d -exec ref_summarise.sh \{\} \;"
+cd "$MINIREF_HOME" && eval "$summarise_all" |
+  	fzf --read0 --reverse --exact --no-hscroll \
     --preview-window down:80% \
     --preview 'ref_preview.sh {1}' \
     --bind 'ctrl-o:execute(refview.sh {1})' \
-    --bind 'enter:execute(cd {1} && $SHELL)+reload(find . -type d -exec ref_summarise.sh \{\} \;)' \
-    --bind 'ctrl-r:reload(find . -type d -exec ref_summarise.sh \{\} \;)' \
+    --bind 'enter:execute(cd {1} && $SHELL)+reload('"$summarise_all"')' \
+    --bind 'ctrl-r:reload('"$summarise_all"')' \
     --preview-window='wrap'
