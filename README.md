@@ -1,8 +1,6 @@
 # miniref: Minimalist Reference Management Using the Command Line
 miniref is an experiment at creating an **academic reference manager** (in the sense of [Zotero](https://www.zotero.org)), but for the **command line** and with a **minimalist flavour**. It is strongly inspired by projects like [Cobib](https://mrossinek.gitlab.io/programming/introducing-cobib/) and [fast-p](https://github.com/bellecp/fast-p) (the latter which appears to originate the idea of using `fzf` for searching PDF literature).
 
-**Note: This is an alpha stage project**.
-
 # Requirements
 * [fzf](https://github.com/junegunn/fzf) (available via many OS package managers)
 * xpdf
