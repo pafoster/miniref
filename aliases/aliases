@@ -1,12 +1,8 @@
 # Aliases/functions for refrence management
 alias rv='refview.sh'
 alias rs='refsearch.sh'
-function ra {
-    # Label reference "to_read", edit citation information and change to
-    # resulting directory
-    d=$(refman.py -e -t @to_read "$@") && cd "$d" || return
-}
+alias ra='refman.py -e -t @to_read'
 function rn {
     # Edit a reference's notes using $EDITOR
-    ( test ! -z "$1" && cd "$1" && $EDITOR notes.txt || return )
+    ( test ! -z "$1" && cd "$1" && $EDITOR notes.txt || return 1 )
 }
